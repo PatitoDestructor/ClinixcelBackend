@@ -1,0 +1,18 @@
+# Archivos de entorno
+.env
+
+# Node modules
+node_modules/
+
+# Logs
+logs
+*.log
+npm-debug.log*
+
+# Output build
+dist/
+build/
+
+# Sistema
+.DS_Store
+*.swp
