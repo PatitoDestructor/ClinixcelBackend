@@ -269,7 +269,7 @@ try {
     await enviarCorreo(
         email,
         'Nuevo código de verificación',
-        htmlCodigoVerificacion(codigo)
+        htmlCodigoVerificacion(nuevoCodigo)
     );
 
     res.json({ mensaje: 'Código reenviado correctamente' });
