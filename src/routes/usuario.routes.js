@@ -37,7 +37,13 @@ router.get('/google/callback',
     async (req, res) => {
         const { generarJWT } = require('../utils/generarJWT'); // o donde lo tengas
         const token = generarJWT(req.user.id);
-        res.json({ token });
+
+        res.send(`
+            <script>
+                window.opener.postMessage({ token: '${token}' }, '*');
+                window.close();
+            </script>
+        `);
     }
 );
 
