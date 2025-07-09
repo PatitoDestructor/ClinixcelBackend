@@ -14,7 +14,13 @@ require('./cron/eliminarNoVerificados');
 require('./cron/eliminarTokensExpirados');
 
 
-app.use(cors());
+app.use(cors({
+    origin: 'http://localhost:3000', // ← tu frontend en desarrollo
+    methods: ['GET', 'POST', 'PUT', 'DELETE', 'OPTIONS'],
+    credentials: true, 
+}));
+
+
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
 app.use(morgan("dev"));
